@@ -1,0 +1,24 @@
+//增删改的操作全部使用该方法
+public int ExcuteNonQuery(String sql){
+    Connection conn=getConnection();
+    PreparedStatement preparedStatement=conn.preparedStatement();
+
+
+}
+public static void closeAll(Connection conn,PreparedStatement preparedStatement,ResultSet resultSet)
+{
+    try{
+        if(preparedStatement!=null){
+            preparedStatement=null;
+        }
+        if(conn!=null){
+            conn.close();
+        }
+        if(resultSet!=null){
+            resultSet.close();
+        }
+    }
+    catch(Exception e){
+        e.getMessage();
+    }
+}
